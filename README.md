@@ -1,2 +1,2 @@
 # py-fake-pay
-fake payment page to test various startup ideas
+fake payment page to test demand for startup ideas
