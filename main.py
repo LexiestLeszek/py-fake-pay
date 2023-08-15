@@ -17,13 +17,13 @@ async def get_payment_page():
     </head>
     <body>
         <h1>Enter Your Payment Details</h1>
-        <form hx-post="/submit" hx-target="#payment-form" hx-swap="outerHTML">
+        <form hx-post="/submit" hx-post="#payment-form" hx-swap="outerHTML">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
+            <input type="text" id="name" name="name" placeholder="JOHN DOE" required><br>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+            <input type="email" id="email" name="email" placeholder="example@example.com" required><br>
             <label for="card_number">Card Number:</label>
-            <input type="text" id="card_number" name="card_number" required><br>
+            <input type="text" id="card_number" name="card_number" placeholder="0000 0000 0000 0000" required><br>
             <label for="expiry">Expiry:</label>
             <input type="text" id="expiry" name="expiry" required pattern="\d{2}/\d{2}" maxlength="5" placeholder="MM/YY" hx-trigger="keyup" hx-post="/auto_format_expiry" oninput="formatExpiry(this)" required><br>
             <label for="cvv">CVV:</label>
@@ -61,7 +61,6 @@ async def submit_payment():
     </body>
     </html>
     """
-
 
 if __name__ == "__main__":
     import uvicorn
